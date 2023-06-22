@@ -1,0 +1,27 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-06-22T16:57:16Z",
+  "id": "ml-nagoya-chatgpt-handson",
+  "duration": 0,
+  "title": "機械学習名古屋 ChatGPTのAPIを使ったハンズオン",
+  "authors": "Koki Miura",
+  "summary": "ChatGPTのAPIを使って遊んでいくハンズオンになります",
+  "source": "1N3JVY5ETg2o8DisAPEA37eeRAAZiZhhG9Ey30EJcoMc",
+  "theme": "ai",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "ai"
+  ],
+  "tags": [
+    "ai",
+    "api",
+    "linebot"
+  ],
+  "feedback": "https://twitter.com/k_miura_io",
+  "url": "ml-nagoya-chatgpt-handson"
+}
