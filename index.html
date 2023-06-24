@@ -36,7 +36,7 @@
 <p>Step2ではLINEbotを動かすための設定を進めていきます。</p>
 <p>Step3ではStep1とStep2をあわせてChatGPTを使えるLINEbotを構築していきます。</p>
 <p>Step4では応用編として、6/13にリリースされた新機能である「Function Calling」を使ってChatGPTの機能を拡張していきます。</p>
-<p class="image-container"><img style="width: 600.00px" src="img\\3f10bdc6c199447d.png"></p>
+<p class="image-container"><img style="width: 600.00px" src="img/3f10bdc6c199447d.png"></p>
 <p>次のページから早速ハンズオンを進めていきましょう。</p>
 
 
@@ -47,8 +47,8 @@
 <p>今回は簡単に環境構築をできるようにGitpodというサービスを使用してオンラインの開発環境を構築します。以下のリポジトリにアクセスします。</p>
 <p><a href="https://github.com/Miura55/chatgptbot-handson" target="_blank">https://github.com/Miura55/chatgptbot-handson</a></p>
 <p>レポジトリの下部にあるREADMEにある <code>Open in Gitpod</code> をクリックすることで今回のハンズオンの開発を構築します。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\db29bce42a926703.png"></p>
-<p>以下のようにオンラインのIDEが起動されたら開発環境構築は完了です。<img style="width: 601.70px" src="img\\c0cbeb33d0eaef9d.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/db29bce42a926703.png"></p>
+<p>以下のようにオンラインのIDEが起動されたら開発環境構築は完了です。<img style="width: 601.70px" src="img/c0cbeb33d0eaef9d.png"></p>
 <p>ここまでできたらハンズオンの準備は完了です。次のステップでからハンズオンを進めていきましょう。</p>
 
 
@@ -57,12 +57,12 @@
       <google-codelab-step label="Step1. ChatGPTのAPIを試す" duration="0">
         <h2 is-upgraded>OpneAI API keyを取得(すでに取得している場合はスキップしてOKです)</h2>
 <p><a href="https://platform.openai.com/" target="_blank">https://platform.openai.com/</a> を開き、<code>View API keys</code>を開きます。</p>
-<p class="image-container"><img style="width: 375.00px" src="img\\8c209655f5828275.png"></p>
+<p class="image-container"><img style="width: 375.00px" src="img/8c209655f5828275.png"></p>
 <p>APIキーを作成してない場合は、<code>Create new secret keys</code>をクリックしてAPIキーを新規で作成します。</p>
-<p class="image-container"><img style="width: 501.97px" src="img\\f76cc5f6ffde55fb.png"></p>
-<p>必要があればシークレットキーを管理するための名前を設定します。今回は<code>handson</code>という名前を設定します。<img style="width: 581.00px" src="img\\a5b376ef5ddd0f3d.png"></p>
+<p class="image-container"><img style="width: 501.97px" src="img/f76cc5f6ffde55fb.png"></p>
+<p>必要があればシークレットキーを管理するための名前を設定します。今回は<code>handson</code>という名前を設定します。<img style="width: 581.00px" src="img/a5b376ef5ddd0f3d.png"></p>
 <p>APIキーが表示されたら手元にメモしておきます。一度<code>Done</code>ボタンをクリックして画面を閉じると再度APIキーを確認することができません。</p>
-<p class="image-container"><img style="width: 520.00px" src="img\\c896327546e50a09.png"></p>
+<p class="image-container"><img style="width: 520.00px" src="img/c896327546e50a09.png"></p>
 <p>メモしたAPIキーは.envファイルの <code>OPENAI_API_KEY</code> に記入します。(以下の<code>YOUR_API_KEY</code> の箇所をご自分のAPIキーに書き換えます)</p>
 <pre><code>OPENAI_API_KEY=YOUR_API_KEY</code></pre>
 <h2 is-upgraded>APIを実行してみる</h2>
@@ -77,7 +77,7 @@
   }&#39;
 </code></pre>
 <p>ターミナルに貼り付けるときに以下のダイアログが表示されたらコピペを許可してもらっていいです。</p>
-<p class="image-container"><img style="width: 324.00px" src="img\\e7b575ff2486538e.png"></p>
+<p class="image-container"><img style="width: 324.00px" src="img/e7b575ff2486538e.png"></p>
 <p>APIを実行して以下のようにリクエストしたメッセージに対する返答がレスポンスで返ってきたらAPIは正常に実行されています。</p>
 <pre><code>{
   &#34;id&#34;: &#34;chatcmpl-ExampleId&#34;,
@@ -114,36 +114,36 @@
 <p>以下のドキュメントを参考にLINE DevelopersコンソールでMessaging APIのチャネルを作成します。</p>
 <p><a href="https://developers.line.biz/ja/docs/messaging-api/getting-started/#using-console" target="_blank">https://developers.line.biz/ja/docs/messaging-api/getting-started/#using-console</a></p>
 <p>チャネルを作成したらMessaging APIの接続情報を取得します。</p>
-<p>作成したチャネルのページの「チャネル基本設定」タブを選択して、画面下部にある「チャネルシークレット」をコピーします。<img style="width: 601.70px" src="img\\58bafc956e422788.png"></p>
+<p>作成したチャネルのページの「チャネル基本設定」タブを選択して、画面下部にある「チャネルシークレット」をコピーします。<img style="width: 601.70px" src="img/58bafc956e422788.png"></p>
 <p>コピーするときは、チャネルシークレットの右端にあるクリップボードアイコンをクリックするとコピーすることができます。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\1633401300fa3e75.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/1633401300fa3e75.png"></p>
 <p>コピーしたチャネルシークレットは.envファイルの <code>LINE_CHANNEL_SECRET</code> に記入します。(<code>YOUR_CHANNEL_SECRET</code> の箇所をご自分のチャネルシークレットキーに書き換えます)</p>
 <pre><code>LINE_CHANNEL_SECRET=YOUR_CHANNEL_SECRET</code></pre>
 <p>次に「Messaging API設定」タブを選択して、画面下部にある「チャネルアクセストークン」に移動します。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\75ce6fd53479d2f.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/75ce6fd53479d2f.png"></p>
 <p>チャネル作成時にはチャネルアクセストークンが生成されてない状態なので、「発行」ボタンをクリックしてチャネルアクセストークンを発行します。</p>
-<p class="image-container"><img style="width: 388.00px" src="img\\39aa0616987bf7aa.png"></p>
+<p class="image-container"><img style="width: 388.00px" src="img/39aa0616987bf7aa.png"></p>
 <p>チャネルアクセストークンが発行されたら.envファイルの <code>LINE_CHANNEL_ACCESS_TOKEN</code> に記入します。( <code>YOUR_CHANNEL_ACCESS_TOKEN</code> の箇所をご自分のアクセストークンに書き換えます。)</p>
 <pre><code>LINE_CHANNEL_ACCESS_TOKEN=YOUR_CHANNEL_ACCESS_TOKEN</code></pre>
 <h2 is-upgraded>LINE botを動かすサーバーを起動する</h2>
 <p>今回はGitpod上でLINE bot用にサーバーを立ち上げます。まずはサーバーを立ち上げて動くかどうかを確認してみます。</p>
 <p>サーバーはGitpodのターミナル上で以下のコマンドを実行すると立ち上がります。</p>
 <pre><code>uvicorn app:app --reload --host 0.0.0.0 --port 5000</code></pre>
-<p>起動後、GitpodのIDE下部にある「ports」タブをクリックして、ポート番号が5000番の行にある鍵のアイコンをクリックしてURLを外部に公開します。これによりLINEのプラットフォームから現在起動中のLINE botのサーバーにアクセスできるようになります。<img style="width: 601.70px" src="img\\5df3c2ef7bf0a31b.png"></p>
-<p>左側にあるクリップボードアイコンをクリックしてパブリックになったサーバーのURLをコピーして手元にメモしておきます。このURLがLINE botを接続するために必要なWebhook URLのベースになります。<img style="width: 601.70px" src="img\\53e4b8bdb5f7c66f.png"></p>
+<p>起動後、GitpodのIDE下部にある「ports」タブをクリックして、ポート番号が5000番の行にある鍵のアイコンをクリックしてURLを外部に公開します。これによりLINEのプラットフォームから現在起動中のLINE botのサーバーにアクセスできるようになります。<img style="width: 601.70px" src="img/5df3c2ef7bf0a31b.png"></p>
+<p>左側にあるクリップボードアイコンをクリックしてパブリックになったサーバーのURLをコピーして手元にメモしておきます。このURLがLINE botを接続するために必要なWebhook URLのベースになります。<img style="width: 601.70px" src="img/53e4b8bdb5f7c66f.png"></p>
 <h2 is-upgraded>Webhook URLを設定する</h2>
 <p>LINE Developerコンソールに移動して「Messaging API設定」に移動し、「Webhook設定」のWebhook URLに「先程コピーしたGitpodのURL+/callback」の形でURLを設定します。</p>
 <p>設定を終えたら「検証」ボタンをクリックしてLINE botを動かすサーバーに接続できるか確認します。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\188502932a5e4fff.png"></p>
-<p>検証ボタンをクリックして以下のダイアログが表示されたらサーバーに正常に接続できています。もしそれ以外のエラーが出た場合は設定したWebhook URLが正しいかどうかや、URLがパブリックに設定されているかをご確認ください。<img style="width: 332.00px" src="img\\ccb735f2c783f634.png"></p>
-<p>LINE botとやり取りをするために更に設定を行います。「Messaging API設定」タブにある「LINE公式アカウント機能」の項目にある「応答メッセージ」の項目にある「編集」をクリックします。<img style="width: 601.70px" src="img\\3d37d2b1fccee4e9.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/188502932a5e4fff.png"></p>
+<p>検証ボタンをクリックして以下のダイアログが表示されたらサーバーに正常に接続できています。もしそれ以外のエラーが出た場合は設定したWebhook URLが正しいかどうかや、URLがパブリックに設定されているかをご確認ください。<img style="width: 332.00px" src="img/ccb735f2c783f634.png"></p>
+<p>LINE botとやり取りをするために更に設定を行います。「Messaging API設定」タブにある「LINE公式アカウント機能」の項目にある「応答メッセージ」の項目にある「編集」をクリックします。<img style="width: 601.70px" src="img/3d37d2b1fccee4e9.png"></p>
 <p>応答メッセージの項目を無効にします。こうすることでLINE botのサーバーとやり取りをできるようになります。無効に設定をすると自動で保存されます。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\cb7af3c7a23fd156.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/cb7af3c7a23fd156.png"></p>
 <h2 is-upgraded>オウム返しボットを動かす</h2>
 <p>これでLINE botを動かす準備ができました。スマホのLINEアプリのQRコードリーダーからLINE Developerコンソールの「Messaging API設定」タブにあるQRコードを読み取って友だち追加します。</p>
-<p class="image-container"><img style="width: 244.24px" src="img\\45296c2ff6d4764c.png"></p>
+<p class="image-container"><img style="width: 244.24px" src="img/45296c2ff6d4764c.png"></p>
 <p>友だち追加したらトーク画面に移動して任意のメッセージを送信します。以下のように送信したメッセージがbotから返ってきたらオウム返しボットは正常に動作しています。もし何も返ってきてない場合はアクセストークンが正しいか確認をしてください。(Gitpod側のターミナルにも何かエラーが出てないか確認をするとエラーの原因がわかることもあります。)</p>
-<p class="image-container"><img style="width: 317.17px" src="img\\e51e5b3e4282b2d4.png"></p>
+<p class="image-container"><img style="width: 317.17px" src="img/e51e5b3e4282b2d4.png"></p>
 <p>ここまでできたらLINE botが動かせている状態です。次のステップではいよいよChatGPTと連携するLINE botを作っていきましょう。</p>
 
 
@@ -177,10 +177,10 @@ def handle_message(event):
 <p>プログラムを書き換えたら「Ctrl + S(Macの方はCmd + S)」で保存をします。保存をすると自動で更新がかかるので、ボットにメッセージを送信できる状態になります。</p>
 <h2 is-upgraded>動作確認</h2>
 <p>それでは実際にメッセージを送ってみます。トーク画面で何かメッセージを送って以下のようにChatGPTからの返答が返ってきたらボットは正常に動作しています。</p>
-<p class="image-container"><img style="width: 330.96px" src="img\\8fd7b88e6e37e6cc.png"></p>
+<p class="image-container"><img style="width: 330.96px" src="img/8fd7b88e6e37e6cc.png"></p>
 <p>これでChatGPTが動作するLINE botができました。ChatGPTがとても優秀なのはお分かりいただけるかと思いますが、いくつか弱点もあります。</p>
 <p>その一つがリアルタイムの情報の回答に対応していないことです。例えば以下のように明日の天気を聞いても回答できないと返答されます。</p>
-<p class="image-container"><img style="width: 296.09px" src="img\\867c40852efba9e.png"></p>
+<p class="image-container"><img style="width: 296.09px" src="img/867c40852efba9e.png"></p>
 <p>この問題を解決する方法として、2023年6月13日にリリースされた新機能「Function calling」を使う方法があります。</p>
 <p><a href="https://openai.com/blog/function-calling-and-other-api-updates" target="_blank">https://openai.com/blog/function-calling-and-other-api-updates</a></p>
 <p>この機能は簡単に言うとChatGPTの機能拡張を開発者が簡単に実装できるというものです。この機能を使えば天気のようなリアルタイムの情報の回答にも対応できるようになります。</p>
@@ -241,6 +241,7 @@ def handle_message(event):
 
 @handler.add(MessageEvent, TextMessage)
 def handle_message(event):
+    import json
     # ユーザー関数のモデルを定義してメッセージと一緒にリクエストを送ることで関数にアクセスできるか判定する
     response = openai.ChatCompletion.create(
         model=&#39;gpt-3.5-turbo-0613&#39;,
@@ -407,7 +408,7 @@ def handle_message(event):
 <h2 is-upgraded>動作確認</h2>
 <p>それでは最後の動作確認です。</p>
 <p>LINEアプリを開いて「名古屋の天気を教えて」という感じで知りたい場所の天気をbotに尋ねて天気の情報が返信されたら動作確認成功です。</p>
-<p class="image-container"><img style="width: 286.73px" src="img\\7396ffcd46270b44.png"></p>
+<p class="image-container"><img style="width: 286.73px" src="img/7396ffcd46270b44.png"></p>
 <p>以上でハンズオンの内容はすべて終了です。お疲れ様でした！最後に片付けを説明します。</p>
 
 
@@ -416,14 +417,14 @@ def handle_message(event):
       <google-codelab-step label="片付け" duration="0">
         <h2 is-upgraded>Gitpodのインスタンスの削除</h2>
 <p>Gitpodはフリープランであればタイムアウトでインスタンスが止まるだけで請求は来ないのでハンズオンの復習をするために残してもいいですし、削除したい場合は <a href="https://gitpod.io/workspaces" target="_blank">https://gitpod.io/workspaces</a> から削除することができます。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\e5584624f3714d6.png"> </p>
+<p class="image-container"><img style="width: 601.70px" src="img/e5584624f3714d6.png"> </p>
 <h2 is-upgraded>Messaging APIのチャネルの削除</h2>
 <p>Messaging APIのチャネルも残しても料金が発生するわけではありませんが、削除するときには「チャネル基本設定」タブの一番下にある「チャネルの削除」にある削除ボタンをクリックします。</p>
-<p class="image-container"><img style="width: 307.00px" src="img\\55c2a8962c820c73.png"></p>
+<p class="image-container"><img style="width: 307.00px" src="img/55c2a8962c820c73.png"></p>
 <p>その後表示されるダイアログにある「LINE Official Account Managerを表示」をクリックしてOfficial Account Managerに遷移します。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\32df774301d972ef.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/32df774301d972ef.png"></p>
 <p>Official Account Managerの画面に遷移したらチェックボックスにチェックを入れて「アカウントを削除」をクリックしたらチャネルと公式アカウントが両方削除されます。</p>
-<p class="image-container"><img style="width: 601.70px" src="img\\41326f082bd97d1f.png"></p>
+<p class="image-container"><img style="width: 601.70px" src="img/41326f082bd97d1f.png"></p>
 <h2 is-upgraded>まとめ</h2>
 <p>今回はChatGPTのAPIを使ったアプリケーション開発をしてきました。ChatGPTはとても便利なサービスで開発者向けのAPIも提供されているところから最近では様々な企業がChatGPTを連携したサービスを提供しています(<a href="https://aismiley.co.jp/ai_news/chatgpt-service-for-business/" target="_blank">参考</a>)。</p>
 <p>これらのサービスはプロンプトを工夫することで目的の返答を返すようにしていましたが、今回紹介したFunction Callingを使うことでより簡単に目的に合わせたサービスを提供しやすくなります。</p>
