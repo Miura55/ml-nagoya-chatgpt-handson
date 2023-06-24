@@ -114,7 +114,8 @@
 <p>以下のドキュメントを参考にLINE DevelopersコンソールでMessaging APIのチャネルを作成します。</p>
 <p><a href="https://developers.line.biz/ja/docs/messaging-api/getting-started/#using-console" target="_blank">https://developers.line.biz/ja/docs/messaging-api/getting-started/#using-console</a></p>
 <p>チャネルを作成したらMessaging APIの接続情報を取得します。</p>
-<p>作成したチャネルのページの「チャネル基本設定」タブを選択して、画面下部にある「チャネルシークレット」をコピーします。<img style="width: 601.70px" src="img/58bafc956e422788.png"></p>
+<p>作成したチャネルのページの「チャネル基本設定」タブを選択して、画面下部にある「チャネルシークレット」をコピーします。</p>
+<p class="image-container"><img style="width: 601.70px" src="img/58bafc956e422788.png"></p>
 <p>コピーするときは、チャネルシークレットの右端にあるクリップボードアイコンをクリックするとコピーすることができます。</p>
 <p class="image-container"><img style="width: 601.70px" src="img/1633401300fa3e75.png"></p>
 <p>コピーしたチャネルシークレットは.envファイルの <code>LINE_CHANNEL_SECRET</code> に記入します。(<code>YOUR_CHANNEL_SECRET</code> の箇所をご自分のチャネルシークレットキーに書き換えます)</p>
@@ -129,7 +130,8 @@
 <p>今回はGitpod上でLINE bot用にサーバーを立ち上げます。まずはサーバーを立ち上げて動くかどうかを確認してみます。</p>
 <p>サーバーはGitpodのターミナル上で以下のコマンドを実行すると立ち上がります。</p>
 <pre><code>uvicorn app:app --reload --host 0.0.0.0 --port 5000</code></pre>
-<p>起動後、GitpodのIDE下部にある「ports」タブをクリックして、ポート番号が5000番の行にある鍵のアイコンをクリックしてURLを外部に公開します。これによりLINEのプラットフォームから現在起動中のLINE botのサーバーにアクセスできるようになります。<img style="width: 601.70px" src="img/5df3c2ef7bf0a31b.png"></p>
+<p>起動後、GitpodのIDE下部にある「ports」タブをクリックして、ポート番号が5000番の行にある鍵のアイコンをクリックしてURLを外部に公開します。これによりLINEのプラットフォームから現在起動中のLINE botのサーバーにアクセスできるようになります。</p>
+<p class="image-container"><img style="width: 601.70px" src="img/5df3c2ef7bf0a31b.png"></p>
 <p>左側にあるクリップボードアイコンをクリックしてパブリックになったサーバーのURLをコピーして手元にメモしておきます。このURLがLINE botを接続するために必要なWebhook URLのベースになります。<img style="width: 601.70px" src="img/53e4b8bdb5f7c66f.png"></p>
 <h2 is-upgraded>Webhook URLを設定する</h2>
 <p>LINE Developerコンソールに移動して「Messaging API設定」に移動し、「Webhook設定」のWebhook URLに「先程コピーしたGitpodのURL+/callback」の形でURLを設定します。</p>
